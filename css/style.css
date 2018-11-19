@@ -1,0 +1,15 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+img {
+  width: 100%;
+}
+.animate-me {
+  opacity: 0;
+}
+
+.visible {
+  transition: 3s;
+  opacity: 1;
+}
