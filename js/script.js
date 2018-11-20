@@ -43,4 +43,3 @@ let observer = new IntersectionObserver(entries => {
 myImg.forEach(image => {
   observer.observe(image);
 });
-*/
