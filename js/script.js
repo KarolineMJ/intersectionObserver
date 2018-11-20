@@ -9,6 +9,8 @@ let observer = new IntersectionObserver(entries => {
     if (entry.intersectionRatio > 0) {
       //add classList when the target area is in the screen
       entry.target.classList.add("visible");
+
+      //clone.Image.source = "img/" + classname + ".jpeg"
     }
   });
 });
