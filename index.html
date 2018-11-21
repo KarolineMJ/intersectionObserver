@@ -4,179 +4,60 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Intersection Observer</title>
+    <title>Document</title>
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/info.css" />
   </head>
   <body>
-    <h1 id="header">Travel around the world.</h1>
-
-    <section>
-      <div class="container">
-        <div class="country"><h2>Greece</h2></div>
-
-        <img src="img/Greece.jpg" />
-      </div>
+    <h1>Intersection Observer</h1>
+    <div class="content">
+      <h3>What is it?</h3>
       <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa id
-        explicabo aut natus error vitae iusto voluptatibus a, provident incidunt
-        eaque exercitationem asperiores quae optio voluptatum. Culpa animi
-        corrupti dolorum! <br /><br />Lorem ipsum dolor, sit amet consectetur
-        adipisicing elit. Adipisci consequuntur aliquam itaque laudantium,
-        cumque hic. Amet necessitatibus obcaecati ea possimus neque ducimus.
-        Asperiores corporis nulla ducimus ex, laborum harum repellat.
+        The intersection observer API is used to detect when DOM elements enters
+        the viewport and exists the viewport - basically which elements the user
+        sees in the browser. This will allow sites to lazy-load images and other
+        media, render and remove DOM, detect how far down the user looks on your
+        website to analyze how much they see of the website. It can also provide
+        infinite scrolling as we may see in a social network feed.
       </p>
-    </section>
+      <h3>In other words:</h3>
+      <ul>
+        <li>Lazy-loading of images or other content as a page is scrolled.</li>
+        <li>
+          Implementing "infinite scrolling" web sites, where more and more
+          content is loaded and rendered as you scroll, so that the user doesn't
+          have to flip through pages.
+        </li>
+        <li>
+          Reporting of visibility of advertisements in order to calculate ad
+          revenues.
+        </li>
+        <li>
+          Deciding whether or not to perform tasks or animation processes based
+          on whether or not the user will see the result.
+        </li>
+      </ul>
 
-    <section>
-      <div class="container">
-        <div class="country"><h2>Canada</h2></div>
-
-        <img src="img/Canada.jpg" class="animate-me" />
-      </div>
+      <h3>How does it work?</h3>
       <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa id
-        explicabo aut natus error vitae iusto voluptatibus a, provident incidunt
-        eaque exercitationem asperiores quae optio voluptatum. Culpa animi
-        corrupti dolorum! <br /><br />Lorem ipsum dolor, sit amet consectetur
-        adipisicing elit. Adipisci consequuntur aliquam itaque laudantium,
-        cumque hic. Amet necessitatibus obcaecati ea possimus neque ducimus.
-        Asperiores corporis nulla ducimus ex, laborum harum repellat.
+        The intersection observer observes if something is in view by setting an
+        intersectionRatio. If the ratio is above 0, the content is in view and
+        something can happen.<br /><br />
+        Intersection Observers work in two parts: an observer instance attached
+        to either a specific node or to the overall viewport and a request to
+        this observer to monitor specific children within its descendants. When
+        the observer is created, it is also provided with a callback that
+        receives one or more intersection entries.
       </p>
-    </section>
-    <section>
-      <div class="container">
-        <div class="country"><h2>Corsica</h2></div>
+      <h3>Examples</h3>
+      <a href="demo.html">
+        <div id="wrapper">
+          <img src="img/Scotland.jpg" />
 
-        <img src="img/Corsica.jpg" />
-      </div>
-      <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa id
-        explicabo aut natus error vitae iusto voluptatibus a, provident incidunt
-        eaque exercitationem asperiores quae optio voluptatum. Culpa animi
-        corrupti dolorum! <br /><br />Lorem ipsum dolor, sit amet consectetur
-        adipisicing elit. Adipisci consequuntur aliquam itaque laudantium,
-        cumque hic. Amet necessitatibus obcaecati ea possimus neque ducimus.
-        Asperiores corporis nulla ducimus ex, laborum harum repellat.
-      </p>
-    </section>
-
-    <section>
-      <div class="container">
-        <div class="country"><h2>Denmark</h2></div>
-
-        <img src="img/Denmark.jpg" />
-      </div>
-      <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa id
-        explicabo aut natus error vitae iusto voluptatibus a, provident incidunt
-        eaque exercitationem asperiores quae optio voluptatum. Culpa animi
-        corrupti dolorum! <br /><br />Lorem ipsum dolor, sit amet consectetur
-        adipisicing elit. Adipisci consequuntur aliquam itaque laudantium,
-        cumque hic. Amet necessitatibus obcaecati ea possimus neque ducimus.
-        Asperiores corporis nulla ducimus ex, laborum harum repellat.
-      </p>
-    </section>
-    <section>
-      <div class="container">
-        <div class="country"><h2>Iceland</h2></div>
-
-        <img src="img/Iceland.jpg" />
-      </div>
-      <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa id
-        explicabo aut natus error vitae iusto voluptatibus a, provident incidunt
-        eaque exercitationem asperiores quae optio voluptatum. Culpa animi
-        corrupti dolorum! <br /><br />Lorem ipsum dolor, sit amet consectetur
-        adipisicing elit. Adipisci consequuntur aliquam itaque laudantium,
-        cumque hic. Amet necessitatibus obcaecati ea possimus neque ducimus.
-        Asperiores corporis nulla ducimus ex, laborum harum repellat.
-      </p>
-    </section>
-
-    <section>
-      <div class="container">
-        <div class="country"><h2>Japan</h2></div>
-
-        <img src="img/Japan.jpg" />
-      </div>
-      <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa id
-        explicabo aut natus error vitae iusto voluptatibus a, provident incidunt
-        eaque exercitationem asperiores quae optio voluptatum. Culpa animi
-        corrupti dolorum! <br /><br />Lorem ipsum dolor, sit amet consectetur
-        adipisicing elit. Adipisci consequuntur aliquam itaque laudantium,
-        cumque hic. Amet necessitatibus obcaecati ea possimus neque ducimus.
-        Asperiores corporis nulla ducimus ex, laborum harum repellat.
-      </p>
-    </section>
-
-    <section>
-      <div class="container">
-        <div class="country"><h2>Norway</h2></div>
-
-        <img src="img/Norway.jpg" />
-      </div>
-      <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa id
-        explicabo aut natus error vitae iusto voluptatibus a, provident incidunt
-        eaque exercitationem asperiores quae optio voluptatum. Culpa animi
-        corrupti dolorum! <br /><br />Lorem ipsum dolor, sit amet consectetur
-        adipisicing elit. Adipisci consequuntur aliquam itaque laudantium,
-        cumque hic. Amet necessitatibus obcaecati ea possimus neque ducimus.
-        Asperiores corporis nulla ducimus ex, laborum harum repellat.
-      </p>
-    </section>
-
-    <section>
-      <div class="container">
-        <div class="country"><h2>Scotland</h2></div>
-
-        <img src="img/Scotland.jpg" />
-      </div>
-      <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa id
-        explicabo aut natus error vitae iusto voluptatibus a, provident incidunt
-        eaque exercitationem asperiores quae optio voluptatum. Culpa animi
-        corrupti dolorum! <br /><br />Lorem ipsum dolor, sit amet consectetur
-        adipisicing elit. Adipisci consequuntur aliquam itaque laudantium,
-        cumque hic. Amet necessitatibus obcaecati ea possimus neque ducimus.
-        Asperiores corporis nulla ducimus ex, laborum harum repellat.
-      </p>
-    </section>
-
-    <section>
-      <div class="container">
-        <div class="country"><h2>USA</h2></div>
-
-        <img src="img/USA.jpg" />
-      </div>
-      <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa id
-        explicabo aut natus error vitae iusto voluptatibus a, provident incidunt
-        eaque exercitationem asperiores quae optio voluptatum. Culpa animi
-        corrupti dolorum! <br /><br />Lorem ipsum dolor, sit amet consectetur
-        adipisicing elit. Adipisci consequuntur aliquam itaque laudantium,
-        cumque hic. Amet necessitatibus obcaecati ea possimus neque ducimus.
-        Asperiores corporis nulla ducimus ex, laborum harum repellat.
-      </p>
-    </section>
-
-    <section>
-      <div class="container">
-        <div class="country"><h2>Australia</h2></div>
-
-        <img src="img/Australia.jpg" />
-      </div>
-      <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa id
-        explicabo aut natus error vitae iusto voluptatibus a, provident incidunt
-        eaque exercitationem asperiores quae optio voluptatum. Culpa animi
-        corrupti dolorum! <br /><br />Lorem ipsum dolor, sit amet consectetur
-        adipisicing elit. Adipisci consequuntur aliquam itaque laudantium,
-        cumque hic. Amet necessitatibus obcaecati ea possimus neque ducimus.
-        Asperiores corporis nulla ducimus ex, laborum harum repellat.
-      </p>
-    </section>
+          <h2>Demo</h2>
+        </div>
+      </a>
+    </div>
 
     <script src="js/script.js"></script>
   </body>

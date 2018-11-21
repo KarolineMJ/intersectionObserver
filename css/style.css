@@ -11,7 +11,9 @@ body {
   font-size: 3em;
   text-transform: uppercase;
   padding: 2em;
+  text-align: center;
 }
+
 .container {
   position: relative;
 }
@@ -30,23 +32,22 @@ body {
   z-index: 2;
 }
 
-.appear {
-  animation: animateCountry 2s forwards;
-}
-p {
+section p {
   padding: 5em 3em;
 }
 img {
   width: 100%;
-}
-img {
   opacity: 0;
 }
+
 .visible {
   transition: 3s;
   opacity: 1;
 }
 
+.appear {
+  animation: animateCountry 2s forwards;
+}
 @keyframes animateCountry {
   from {
     transform: translate(-50%, 100%);
