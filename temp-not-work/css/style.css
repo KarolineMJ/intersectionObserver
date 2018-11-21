@@ -27,7 +27,6 @@ body {
   background-color: rgba(0, 0, 0, 0.5);
   padding: 3em 8em;
   letter-spacing: 0.5em;
-  z-index: 2;
 }
 p {
   padding: 5em 3em;
@@ -35,9 +34,10 @@ p {
 img {
   width: 100%;
 }
-img {
+.animate-me {
   opacity: 0;
 }
+
 .visible {
   transition: 3s;
   opacity: 1;
