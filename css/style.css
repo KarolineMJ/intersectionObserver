@@ -20,7 +20,7 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, 100%);
   color: white;
   text-transform: uppercase;
   text-shadow: #ffffff 1px 0 20px;
@@ -28,6 +28,10 @@ body {
   padding: 3em 8em;
   letter-spacing: 0.5em;
   z-index: 2;
+}
+
+.appear {
+  animation: animateCountry 2s forwards;
 }
 p {
   padding: 5em 3em;
@@ -41,4 +45,13 @@ img {
 .visible {
   transition: 3s;
   opacity: 1;
+}
+
+@keyframes animateCountry {
+  from {
+    transform: translate(-50%, 100%);
+  }
+  to {
+    transform: translate(-50%, -50%);
+  }
 }
