@@ -27,18 +27,23 @@ body {
   background-color: rgba(0, 0, 0, 0.5);
   padding: 3em 8em;
   letter-spacing: 0.5em;
+  z-index: 2;
 }
 p {
   padding: 5em 3em;
 }
 img {
   width: 100%;
+  opacity: 0;
 }
 .animate-me {
-  opacity: 0;
 }
 
 .visible {
-  transition: 3s;
-  opacity: 1;
+  animation: showUs 3s forwards;
+}
+@keyframes showUs {
+  to {
+    opacity: 1;
+  }
 }

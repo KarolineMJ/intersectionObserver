@@ -2,6 +2,7 @@
 //get the element from the document
 const myTemp = document.querySelector("#travelTemp").content;
 let countries = [];
+let nextCountry;
 
 window.addEventListener("DOMContentLoaded", fetchCountries);
 
@@ -12,9 +13,12 @@ function fetchCountries() {
     .then(result => result.json())
     .then(showCountries);
 }
-
+let observer;
 function showCountries(data) {
-  //console.log(data);
+  countries = data;
+  nextCountry = 0;
+  /*
+  console.log(data);
   const countryName = Object.values(data);
   console.log(countryName);
   countryName.forEach(name => {
@@ -26,28 +30,56 @@ function showCountries(data) {
     //clone.querySelector("img").src = "img/" + name.slice() + ".jpg";
     document.querySelector("#travelContent").appendChild(clone);
   });
+  */
+  let intersectionOptions = {
+    root: document.querySelector("body")
+  };
+
+  observer = new IntersectionObserver(newEntry);
+
+  const footer = document.querySelector("footer");
+  observer.observe(footer);
+
+  function newEntry(entries, observer) {
+    //  console.log(entries);
+    entries.forEach(entry => {
+      console.log(entry);
+      console.log("this works");
+      if (entry.isIntersecting) {
+        showNextCountry();
+      }
+    });
+  }
+}
+
+function showNextCountry() {
+  console.log("show next country");
+
+  // TODO: avoid doing anything when the last country has been shown ...
+  const name = countries[nextCountry];
+
+  console.log(name);
+
+  const clone = myTemp.cloneNode(true);
+  clone.querySelector("h2").textContent = name;
+  const travelImg = clone.querySelector("img");
+  travelImg.src = "img/" + name + ".jpg";
+  //  travelImg.classList.add("animate-me");
+  travelImg.classList.add("visible");
+
+  //clone.querySelector("img").src = "img/" + name.slice() + ".jpg";
+  document.querySelector("#travelContent").appendChild(clone);
+
+  nextCountry++;
 }
 //const myImg = document.querySelectorAll(".animate-me");
 
-let intersectionOptions = {
-  root: document.querySelector("#travelTemp")
-};
-let observer = new IntersectionObserver(newEntry, intersectionOptions);
 /*
 //run intersection observer for each image
 myImg.forEach(image => {
   observer.observe(image);
 });
 */
-
-const header = document.querySelector("#header");
-observer.observe(header);
-
-let newEntry = function(entries, observer) {
-  entries.forEach(entry => {
-    console.log("this works");
-  });
-};
 
 /*
 //define the observer
